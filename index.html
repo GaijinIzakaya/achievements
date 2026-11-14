@@ -24,8 +24,11 @@
 body{margin:0;background:var(--night);color:var(--cream);font-family:var(--f-body);font-size:15px;line-height:1.45;
   padding:28px max(16px,env(safe-area-inset-left)) 48px max(16px,env(safe-area-inset-right))}
 .wrap{max-width:1040px;margin:0 auto}
-header{border-bottom:2px solid var(--pink);padding-bottom:16px;margin-bottom:22px;display:flex;flex-direction:column;gap:4px}
-.jp{font-family:var(--f-jp);color:var(--pink);font-size:14px;letter-spacing:.2em}
+header{border-bottom:2px solid var(--pink);padding-bottom:16px;margin-bottom:22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.head-txt{display:flex;flex-direction:column;gap:4px;min-width:0}
+.logo{flex:none;width:clamp(84px,14vw,130px);height:auto;display:block}
+@media (max-width:520px){header{flex-direction:column-reverse;align-items:flex-start}}
+.jp{font-family:var(--f-jp);color:var(--pink);font-size:18px;letter-spacing:.2em}
 h1{font-family:var(--f-title);font-weight:400;font-size:clamp(24px,5vw,38px);margin:0;letter-spacing:.04em;overflow-wrap:anywhere}
 .lead{color:var(--muted);margin:0}
 .progress{max-width:560px;margin:4px 0 26px}
@@ -71,9 +74,12 @@ a:focus-visible{outline:2px solid var(--yellow);outline-offset:2px}
 <body>
 <div class="wrap">
 <header>
-  <span class="jp">外人居酒屋 · 実績</span>
-  <h1 id="title">Achievement</h1>
-  <p class="lead" id="lead">Caricamento…</p>
+  <div class="head-txt">
+    <span class="jp">外人居酒屋 · 実績</span>
+    <h1 id="title">Achievement</h1>
+    <p class="lead" id="lead">Caricamento…</p>
+  </div>
+  <img class="logo" src="logo.webp" alt="Gaijin Izakaya" width="119" height="140">
 </header>
 
 <main id="main" aria-live="polite"></main>
